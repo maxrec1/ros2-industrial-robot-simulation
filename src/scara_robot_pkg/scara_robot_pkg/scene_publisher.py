@@ -175,8 +175,7 @@ class ScenePublisher(Node):
         self._last_dynamic_stamp = now
 
     def _apply_scene(self, collision_objects: List[CollisionObject]) -> bool:
-
-
+        pass
 
     def _publish_scene_diff(self, collision_objects: List[CollisionObject]) -> None:
         msg = PlanningScene()

@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>view_robot_pkg</name>
+  <name>scara_robot_pkg</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="apostolos-ubuntu-pc@todo.todo">apostolos-ubuntu-pc</maintainer>
+  <description>SCARA robot pick and place pipeline</description>
+  <maintainer email="maxrec@todo.todo">maxrec</maintainer>
   <license>TODO: License declaration</license>
 
   <test_depend>ament_copyright</test_depend>
