@@ -78,7 +78,11 @@ def main():
 
     urdf_file_path = os.path.join(get_package_share_directory(args.package), 'urdf', args.urdf) # It is assumed that the .urdf/.xacro file is located in /urdf folder!
     xacro_file = xacro.process_file(urdf_file_path)
-    request.xml = xacro_file.toxml() 
+    request.xml = xacro_file.toxml()
+    
+    # Convert package:// URIs to file:// URIs so Gazebo can find meshes and other resources
+    pkg_path = get_package_share_directory(args.package)
+    request.xml = request.xml.replace(f'package://{args.package}/', f'file://{pkg_path}/')
 
     request.initial_pose.position.x = float(args.x)
     request.initial_pose.position.y = float(args.y)

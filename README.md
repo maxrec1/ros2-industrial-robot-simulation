@@ -39,3 +39,43 @@ source /opt/ros/humble/setup.bash
 colcon build
 source install/setup.bash
 ```
+
+## Running the Simulation
+
+```bash
+ros2 launch scara_robot_pkg pick_place_pipeline.launch.py
+```
+
+## Conveyor Belt Control
+
+### Spawn objects
+
+Spawn **PCB** on Conveyor 1 (runs along Y axis):
+```bash
+ros2 run ros2_conveyorbelt SpawnObject.py --package "conveyorbelt_gazebo" --urdf "pcb.urdf" --name "pcb1" --x 0.0 --y -0.5 --z 1.2
+```
+
+Spawn **Chip** on Conveyor 2 (runs along X axis):
+```bash
+ros2 run ros2_conveyorbelt SpawnObject.py --package "conveyorbelt_gazebo" --urdf "chip.urdf" --name "chip1" --x -1.3 --y -1.0 --z 1.2
+```
+
+### Activate / Stop Conveyor 1
+
+```bash
+# Activate (power 0.0–100.0)
+ros2 service call /CONVEYORPOWER conveyorbelt_msgs/srv/ConveyorBeltControl "{power: 20.0}"
+
+# Stop
+ros2 service call /CONVEYORPOWER conveyorbelt_msgs/srv/ConveyorBeltControl "{power: 0.0}"
+```
+
+### Activate / Stop Conveyor 2
+
+```bash
+# Activate (power 0.0–100.0)
+ros2 service call /belt2/CONVEYORPOWER conveyorbelt_msgs/srv/ConveyorBeltControl "{power: 20.0}"
+
+# Stop
+ros2 service call /belt2/CONVEYORPOWER conveyorbelt_msgs/srv/ConveyorBeltControl "{power: 0.0}"
+```

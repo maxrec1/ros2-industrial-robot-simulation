@@ -38,6 +38,7 @@ install(
     models
     worlds
     urdf
+    meshes
   DESTINATION 
     share/${PROJECT_NAME}
 )
