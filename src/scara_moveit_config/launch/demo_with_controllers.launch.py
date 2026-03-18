@@ -18,6 +18,12 @@ def generate_launch_description():
         "db", default_value="False", description="Database flag"
     )
 
+    use_gazebo_controllers_arg = DeclareLaunchArgument(
+        "use_gazebo_controllers",
+        default_value="True",
+        description="When true, do not start local ros2_control, static TF, or robot_state_publisher",
+    )
+
     moveit_config = (
         MoveItConfigsBuilder("Scara Assembly1", package_name="scara_moveit_config")
         .robot_description_semantic(file_path="config/Scara Assembly1.srdf")
@@ -40,6 +46,7 @@ def generate_launch_description():
 
     # RViz
     tutorial_mode = LaunchConfiguration("rviz_tutorial")
+    use_gazebo_controllers = LaunchConfiguration("use_gazebo_controllers")
     rviz_base = os.path.join(
         get_package_share_directory("scara_moveit_config"), "config"
     )
@@ -80,6 +87,7 @@ def generate_launch_description():
         name="static_transform_publisher",
         output="log",
         arguments=["0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "world", "base_link"],
+        condition=UnlessCondition(use_gazebo_controllers),
     )
 
     # Publish TF
@@ -89,6 +97,7 @@ def generate_launch_description():
         name="robot_state_publisher",
         output="both",
         parameters=[moveit_config.robot_description],
+        condition=UnlessCondition(use_gazebo_controllers),
     )
 
     # ros2_control node
@@ -105,6 +114,7 @@ def generate_launch_description():
             ("/controller_manager/robot_description", "/robot_description"),
         ],
         output="screen",
+        condition=UnlessCondition(use_gazebo_controllers),
     )
 
     joint_state_broadcaster_spawner = Node(
@@ -115,12 +125,14 @@ def generate_launch_description():
             "--controller-manager",
             "/controller_manager",
         ],
+        condition=UnlessCondition(use_gazebo_controllers),
     )
 
     arm_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["arm_trajectory_controller", "-c", "/controller_manager"],
+        condition=UnlessCondition(use_gazebo_controllers),
     )
 
     # Warehouse mongodb server
@@ -141,6 +153,7 @@ def generate_launch_description():
         [
             tutorial_arg,
             db_arg,
+            use_gazebo_controllers_arg,
             rviz_node,
             rviz_node_tutorial,
             static_tf_node,

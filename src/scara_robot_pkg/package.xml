@@ -11,6 +11,10 @@
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>joint_trajectory_controller</exec_depend>
   <exec_depend>joint_state_broadcaster</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>control_msgs</exec_depend>
+  <exec_depend>trajectory_msgs</exec_depend>
+  <exec_depend>conveyorbelt_msgs</exec_depend>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="apostolos-ubuntu-pc@todo.todo">apostolos-ubuntu-pc</maintainer>

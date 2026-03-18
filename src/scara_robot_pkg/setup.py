@@ -14,7 +14,11 @@ setup(
         ('share/' + package_name + '/launch', glob('launch/*.py')),
         ('share/' + package_name + '/urdf', glob('urdf/*.urdf') + glob('urdf/*.xacro')),
         ('share/' + package_name + '/rviz', ['rviz/default_view.rviz']),
-        ('share/' + package_name + '/meshes', glob('meshes/*')), #include meshes
+        ('share/' + package_name + '/meshes', glob('meshes/*')),
+        ('share/' + package_name + '/worlds', glob('worlds/*.world')),
+        ('share/' + package_name + '/models/conveyor_belt_2',
+            glob('models/conveyor_belt_2/*.*')),
+        ('share/' + package_name + '/config', glob('config/*.yaml')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -25,6 +29,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'pick_place_cycle = scara_robot_pkg.pick_place_cycle:main',
         ],
     },
 )
