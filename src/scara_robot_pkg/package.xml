@@ -1,20 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>scara_robot_pkg</name>
-
-  <exec_depend>robot_state_publisher</exec_depend>
-  <exec_depend>joint_state_publisher_gui</exec_depend>
-  <exec_depend>xacro</exec_depend>
-  <exec_depend>gazebo_ros</exec_depend>
-  <exec_depend>gazebo_ros2_control</exec_depend>
-  <exec_depend>controller_manager</exec_depend>
-  <exec_depend>joint_trajectory_controller</exec_depend>
-  <exec_depend>joint_state_broadcaster</exec_depend>
-  <exec_depend>rclpy</exec_depend>
-  <exec_depend>control_msgs</exec_depend>
-  <exec_depend>trajectory_msgs</exec_depend>
-  <exec_depend>conveyorbelt_msgs</exec_depend>
+  <name>view_robot_pkg</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="apostolos-ubuntu-pc@todo.todo">apostolos-ubuntu-pc</maintainer>

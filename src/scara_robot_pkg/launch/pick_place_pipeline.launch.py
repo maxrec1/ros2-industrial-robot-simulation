@@ -36,6 +36,24 @@ def generate_launch_description():
         ],
     )
 
+    scene_publisher = TimerAction(
+        period=9.0,
+        actions=[
+            Node(
+                package='scara_robot_pkg',
+                executable='scene_publisher',
+                output='screen',
+                parameters=[
+                    {
+                        'planning_frame': 'world',
+                        'dynamic_model_names': ['pcb1', 'chip1'],
+                        'dynamic_update_hz': 5.0,
+                    }
+                ],
+            )
+        ],
+    )
+
     pick_place_config = os.path.join(scara_pkg, 'config', 'pick_place_joints.yaml')
     pick_place_cycle = TimerAction(
         period=14.0,
@@ -86,6 +104,7 @@ def generate_launch_description():
     return LaunchDescription([
         gazebo_launch,
         moveit_launch,
+        scene_publisher,
         pick_place_cycle,
         spawn_pcb,
         spawn_chip,
