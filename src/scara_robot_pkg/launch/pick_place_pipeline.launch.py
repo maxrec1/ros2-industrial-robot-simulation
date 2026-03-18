@@ -57,10 +57,10 @@ def generate_launch_description():
                 cmd=['ros2', 'run', 'ros2_conveyorbelt', 'SpawnObject.py',
                      '--package', 'conveyorbelt_gazebo',
                      '--urdf', 'pcb.urdf',
-                     '--name', 'pcb_1',
+                     '--name', 'pcb1',
                      '--x', '0.0',
                      '--y', '-0.5',
-                     '--z', '0.76'],
+                     '--z', '1.2'],
                 output='screen'
             )
         ],
@@ -74,10 +74,10 @@ def generate_launch_description():
                 cmd=['ros2', 'run', 'ros2_conveyorbelt', 'SpawnObject.py',
                      '--package', 'conveyorbelt_gazebo',
                      '--urdf', 'chip.urdf',
-                     '--name', 'chip_1',
-                     '--x', '-1.0',
-                     '--y', '-1.5',
-                     '--z', '0.76'],
+                     '--name', 'chip1',
+                     '--x', '-1.3',
+                     '--y', '-1.0',
+                     '--z', '1.2'],
                 output='screen'
             )
         ],

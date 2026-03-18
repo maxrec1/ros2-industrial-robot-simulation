@@ -36,7 +36,7 @@
   </link>
 
   <gazebo reference="base_link_pcb">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Green</material>
     <mu1>100.0</mu1>
     <mu2>100.0</mu2>
     <selfCollide>false</selfCollide>

@@ -36,7 +36,7 @@
   </link>
 
   <gazebo reference="base_link_chip">
-    <material>Gazebo/Red</material>
+    <material>Gazebo/Grey</material>
     <mu1>100.0</mu1>
     <mu2>100.0</mu2>
     <selfCollide>false</selfCollide>
