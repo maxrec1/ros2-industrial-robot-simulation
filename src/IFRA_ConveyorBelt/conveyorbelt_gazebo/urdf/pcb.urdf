@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- PCB URDF - Automatically generated and adapted for conveyorbelt_gazebo package -->
-<robot name="pcb">
-  <link name="base_link_pcb">
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="RP2040-Module v5 URDF">
+  <link
+    name="base_link_PCB">
     <inertial>
-      <origin xyz="0 0 0.00475" rpy="0 0 0" />
-      <mass value="0.0383" />
+      <origin
+        xyz="-4.8522E-05 1.4931E-05 -0.00064486"
+        rpy="0 0 0" />
+      <mass
+        value="0.00030609" />
       <inertia
-        ixx="3.19E-05"
-        ixy="2.91E-10"
-        ixz="0.0"
-        iyy="1.02E-05"
-        iyz="0.0"
-        izz="4.18E-05" />
+        ixx="1.0203E-08"
+        ixy="9.3113E-14"
+        ixz="4.5634E-27"
+        iyy="3.2615E-09"
+        iyz="-3.8633E-26"
+        izz="1.3378E-08" />
     </inertial>
     <visual>
-      <origin xyz="-3.0173 -4.3763 -6.4655" rpy="0 0 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://conveyorbelt_gazebo/meshes/pcb/base_link_PCB.STL" scale="5.0 5.0 5.0" />
+        <mesh
+          filename="file:///home/maxrec/projects/ros2-industrial-robot-simulation/src/IFRA_ConveyorBelt/conveyorbelt_gazebo/meshes/pcb/base_link_PCB.STL" />
       </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
     <collision>
-      <origin xyz="-3.0173 -4.3763 -6.4655" rpy="0 0 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://conveyorbelt_gazebo/meshes/pcb/base_link_PCB.STL" scale="5.0 5.0 5.0" />
+        <mesh
+          filename="file:///home/maxrec/projects/ros2-industrial-robot-simulation/src/IFRA_ConveyorBelt/conveyorbelt_gazebo/meshes/pcb/base_link_PCB.STL" />
       </geometry>
-      <surface>
-        <contact>
-          <collide_without_contact>false</collide_without_contact>
-        </contact>
-      </surface>
     </collision>
   </link>
-
-  <gazebo reference="base_link_pcb">
-    <material>Gazebo/Green</material>
-    <mu1>100.0</mu1>
-    <mu2>100.0</mu2>
-    <selfCollide>false</selfCollide>
-  </gazebo>
-
 </robot>

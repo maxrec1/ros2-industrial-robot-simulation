@@ -3,7 +3,7 @@
 <package format="3">
   <name>scara_robot_pkg</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>SCARA robot ROS 2 package</description>
   <maintainer email="apostolos-ubuntu-pc@todo.todo">apostolos-ubuntu-pc</maintainer>
   <license>TODO: License declaration</license>
 

@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- CHIP URDF - Automatically generated and adapted for conveyorbelt_gazebo package -->
-<robot name="chip">
-  <link name="base_link_chip">
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Chip URDF">
+  <link
+    name="base_link_chip">
     <inertial>
-      <origin xyz="0 0 0.00225" rpy="0 0 0" />
-      <mass value="0.0055" />
+      <origin
+        xyz="3.18593392589772E-06 -3.1859339257867E-06 -0.00045054616010165"
+        rpy="0 0 0" />
+      <mass
+        value="4.40398679531101E-05" />
       <inertia
-        ixx="5.71E-07"
-        ixy="-1.02E-09"
-        ixz="-1.76E-10"
-        iyy="5.71E-07"
-        iyz="1.76E-10"
-        izz="1.12E-06" />
+        ixx="1.82711355612387E-10"
+        ixy="-3.27832600963396E-13"
+        ixz="-5.61998744508658E-14"
+        iyy="1.82711355612385E-10"
+        iyz="5.61998744507003E-14"
+        izz="3.59488579973235E-10" />
     </inertial>
     <visual>
-      <origin xyz="-2.9300 -4.3990 -6.4985" rpy="0 0 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://conveyorbelt_gazebo/meshes/chip/base_link_chip.STL" scale="5.0 5.0 5.0" />
+        <mesh
+          filename="file:///home/maxrec/projects/ros2-industrial-robot-simulation/src/IFRA_ConveyorBelt/conveyorbelt_gazebo/meshes/chip/base_link_chip.STL" />
       </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
-      <origin xyz="-2.9300 -4.3990 -6.4985" rpy="0 0 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://conveyorbelt_gazebo/meshes/chip/base_link_chip.STL" scale="5.0 5.0 5.0" />
+        <mesh
+          filename="file:///home/maxrec/projects/ros2-industrial-robot-simulation/src/IFRA_ConveyorBelt/conveyorbelt_gazebo/meshes/chip/base_link_chip.STL" />
       </geometry>
-      <surface>
-        <contact>
-          <collide_without_contact>false</collide_without_contact>
-        </contact>
-      </surface>
     </collision>
   </link>
-
-  <gazebo reference="base_link_chip">
-    <material>Gazebo/Grey</material>
-    <mu1>100.0</mu1>
-    <mu2>100.0</mu2>
-    <selfCollide>false</selfCollide>
-  </gazebo>
-
 </robot>

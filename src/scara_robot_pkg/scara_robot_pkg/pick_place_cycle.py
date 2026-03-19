@@ -102,7 +102,7 @@ class PickPlaceCycle(Node):
             raise RuntimeError(f'Goal rejected for stage {stage_name}')
 
         result_future = goal_handle.get_result_async()
-        timeout = max(10.0, float(self._config['default_timing_sec']) + 5.0)
+        timeout = max(60.0, float(self._config['default_timing_sec']) * 5.0 + 10.0)
         rclpy.spin_until_future_complete(self, result_future, timeout_sec=timeout)
         if not result_future.done() or result_future.result() is None:
             raise RuntimeError(f'No result for stage {stage_name}')
